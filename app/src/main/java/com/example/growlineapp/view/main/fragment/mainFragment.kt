@@ -1,29 +1,25 @@
-package com.example.growlineapp.view.main
+package com.example.growlineapp.view.main.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import com.example.growlineapp.base.BaseFragment
-import com.example.growlineapp.databinding.FragmentNoticeboardBinding
+import com.example.growlineapp.databinding.FragmentMainBinding
 
+class mainFragment : BaseFragment(){
 
-class noticeboardFragment : BaseFragment() {
-
-    private var mBinding : FragmentNoticeboardBinding? = null
+    private var mBinding : FragmentMainBinding? = null
 
     override fun init() {
-
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mBinding = FragmentNoticeboardBinding.inflate(inflater, container, false)
+        mBinding = FragmentMainBinding.inflate(inflater, container, false)
         return mBinding?.root
     }
 
@@ -31,5 +27,4 @@ class noticeboardFragment : BaseFragment() {
         super.onDestroyView()
         mBinding = null
     }
-
 }
