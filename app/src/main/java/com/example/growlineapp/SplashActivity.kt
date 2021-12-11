@@ -10,17 +10,14 @@ import com.example.growlineapp.view.login.LoginActivity
 class SplashActivity : BaseActivity() {
 
     private lateinit var mBinding : ActivitySplashBinding
-    private val appVersion = "0.0.1"
+    private val appVersion = "1.0.0"
 
     override fun init() {
-        if (appVersion == "0.0.1") {
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
-        }
-        else if (appVersion == "0.0.0"){
+        if (appVersion =="0.0.0") {
             longShowToast("점검중 입니다.")
         }
         else {
-            shortShowToast("버전이 낮습니다.")
+            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
         }
     }
 
