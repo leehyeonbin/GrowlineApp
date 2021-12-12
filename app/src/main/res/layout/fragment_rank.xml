@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.growlineapp.view.main.fragment.rankFragment">
+    tools:context="com.example.growlineapp.view.main.fragment.rankFragment"
+    android:background="#FFEB3B">
 
     <TextView
         android:layout_width="match_parent"

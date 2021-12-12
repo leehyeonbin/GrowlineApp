@@ -2,14 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_bottom_nav"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/noticeboardFragment"
         android:name="com.example.growlineapp.view.main.fragment.noticeboardFragment"
         android:label="fragment_rank"
-        tools:layout="@layout/fragment_rank" >
+        tools:layout="@layout/fragment_noticeboard" >
         <action
             android:id="@+id/action_noticeboardFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

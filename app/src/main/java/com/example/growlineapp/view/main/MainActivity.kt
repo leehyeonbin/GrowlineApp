@@ -2,6 +2,7 @@ package com.example.growlineapp.view.main
 
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
@@ -18,6 +19,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
+        init()
     }
 
     private fun initBottomNavBar() {

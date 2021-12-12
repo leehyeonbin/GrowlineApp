@@ -1,11 +1,8 @@
 package com.example.growlineapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivitySplashBinding
-import com.example.growlineapp.view.login.LoginActivity
 
 class SplashActivity : BaseActivity() {
 
@@ -13,11 +10,12 @@ class SplashActivity : BaseActivity() {
     private val appVersion = "1.0.0"
 
     override fun init() {
+        checkVersion()
+    }
+
+    private fun checkVersion() {
         if (appVersion =="0.0.0") {
             longShowToast("점검중 입니다.")
-        }
-        else {
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
         }
     }
 
