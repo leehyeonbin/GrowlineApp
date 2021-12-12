@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.growlineapp.base.BaseFragment
-import com.example.growlineapp.databinding.FragmentMainBinding
+import com.example.growlineapp.databinding.FragmentHomeBinding
 
-class mainFragment : BaseFragment(){
+class HomeFragment : BaseFragment(){
 
-    private var mBinding : FragmentMainBinding? = null
+    private var mBinding : FragmentHomeBinding? = null
 
     override fun init() {
     }
@@ -19,7 +19,7 @@ class mainFragment : BaseFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mBinding = FragmentMainBinding.inflate(inflater, container, false)
+        mBinding = FragmentHomeBinding.inflate(inflater, container, false)
         return mBinding?.root
     }
 
