@@ -8,20 +8,12 @@ import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
-    private lateinit var mBinding : ActivityMainBinding
     override fun init() {
         initBottomNavBar()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
-
-        init()
-    }
 
     private fun initBottomNavBar() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_view) as NavHostFragment

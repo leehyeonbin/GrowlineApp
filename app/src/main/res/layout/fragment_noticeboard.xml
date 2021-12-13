@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.growlineapp.view.main.fragment.noticeboardFragment"
-    android:background="#4CAF50">
+<layout>
 
-    <TextView
+    <data>
+        <variable
+            name="main"
+            type="com.example.growlineapp.view.main.fragment.noticeboardFragment" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="게시판" />
+        tools:context="com.example.growlineapp.view.main.fragment.noticeboardFragment"
+        android:background="#4CAF50">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="게시판" />
+
+    </LinearLayout>
+</layout>
