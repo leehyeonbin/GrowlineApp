@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseFragment
-import com.example.growlineapp.databinding.FragmentNoticeboardBinding
+import com.example.growlineapp.databinding.FragmentRankBinding
 
-class noticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fragment_noticeboard){
+class RankFragment : BaseFragment<FragmentRankBinding>(R.layout.fragment_rank){
+
 
 
     override fun init() {
     }
+
 
 }
