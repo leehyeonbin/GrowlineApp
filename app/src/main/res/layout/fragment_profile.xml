@@ -4,7 +4,7 @@
     <data>
         <variable
             name="main"
-            type="com.example.growlineapp.view.main.fragment.ProfileFragment" />
+            type="com.example.growlineapp.ui.view.main.fragment.ProfileFragment" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#9C27B0"
-        tools:context="com.example.growlineapp.view.main.fragment.ProfileFragment">
+        tools:context="com.example.growlineapp.ui.view.main.fragment.ProfileFragment">
 
         <TextView
             android:layout_width="match_parent"

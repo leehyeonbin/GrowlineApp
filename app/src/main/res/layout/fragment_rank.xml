@@ -4,7 +4,7 @@
     <data>
         <variable
             name="main"
-            type="com.example.growlineapp.view.main.fragment.RankFragment" />
+            type="com.example.growlineapp.ui.view.main.fragment.RankFragment" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFEB3B"
-        tools:context="com.example.growlineapp.view.main.fragment.RankFragment">
+        tools:context="com.example.growlineapp.ui.view.main.fragment.RankFragment">
 
         <TextView
             android:layout_width="match_parent"

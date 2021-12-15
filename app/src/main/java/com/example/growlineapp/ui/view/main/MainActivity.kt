@@ -1,14 +1,16 @@
-package com.example.growlineapp.view.main
+package com.example.growlineapp.ui.view.main
 
-import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityMainBinding
+import com.example.growlineapp.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+
+    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun init() {
         initBottomNavBar()

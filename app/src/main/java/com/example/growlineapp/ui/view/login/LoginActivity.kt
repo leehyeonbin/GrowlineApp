@@ -1,11 +1,11 @@
-package com.example.growlineapp.view.login
+package com.example.growlineapp.ui.view.login
 
 import android.content.Intent
 import android.os.Bundle
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityLoginBinding
-import com.example.growlineapp.view.main.MainActivity
+import com.example.growlineapp.ui.view.main.MainActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 

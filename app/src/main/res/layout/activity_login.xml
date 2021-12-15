@@ -4,20 +4,60 @@
     <data>
         <variable
             name="main"
-            type="com.example.growlineapp.view.login.LoginActivity" />
+            type="com.example.growlineapp.ui.view.login.LoginActivity" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
-        tools:context=".view.login.LoginActivity">
+        tools:context=".ui.view.login.LoginActivity"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <Button
-            android:id="@+id/submit_btn"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <EditText
+                android:id="@+id/id_et"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"
+                android:hint="아이디를 입력하세요"/>
+
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="textPassword"
+                android:hint="비밀 번호를 입력하세요"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이디가 없으신가요"/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="80dp"
+                android:background="@color/login_color"
+                android:textColor="@color/white"
+                android:text="로그인"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </layout>

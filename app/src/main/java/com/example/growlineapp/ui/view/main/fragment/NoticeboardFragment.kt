@@ -1,4 +1,4 @@
-package com.example.growlineapp.view.main.fragment
+package com.example.growlineapp.ui.view.main.fragment
 
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseFragment

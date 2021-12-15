@@ -1,7 +1,6 @@
 package com.example.growlineapp.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +25,5 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRe
     protected fun longShowToast(msg : String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
-
 
 }

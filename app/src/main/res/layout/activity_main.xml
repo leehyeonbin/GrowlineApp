@@ -3,7 +3,7 @@
     <data>
         <variable
             name="main"
-            type="com.example.growlineapp.view.main.MainActivity" />
+            type="com.example.growlineapp.ui.view.main.MainActivity" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".view.main.MainActivity"
+        tools:context=".ui.view.main.MainActivity"
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
