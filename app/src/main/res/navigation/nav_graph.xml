@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/rankFragment"
-        android:name="com.example.growlineapp.ui.view.main.fragment.RankFragment"
+        android:name="com.example.growlineapp.ui.view.main.fragment.ShopFragment"
         android:label="fragment_rank"
-        tools:layout="@layout/fragment_rank" >
+        tools:layout="@layout/fragment_shop" >
         <action
             android:id="@+id/action_rankFragment_to_noticeboardFragment"
             app:destination="@id/noticeboardFragment" />
