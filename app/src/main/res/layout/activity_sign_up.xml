@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="signUp"
+            type="com.example.growlineapp.ui.view.login.signup.SignUpActivity" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.login.signup.SignUpActivity"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/signup_id_et"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"
+            android:hint="아이디를 입력하세요"/>
+
+        <EditText
+            android:id="@+id/signup_password_et"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword"
+            android:hint="비밀 번호를 입력하세요"
+            />
+
+        <EditText
+            android:id="@+id/signup_check_et"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="비밀 번호를 다시 입력해주세요"
+            android:inputType="textPassword"
+            />
+
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/login_color"
+            android:textColor="@color/white"
+            android:text="회원가입"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>
