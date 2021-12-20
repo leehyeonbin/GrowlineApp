@@ -8,24 +8,32 @@
             type="com.example.growlineapp.ui.view.main.fragment.NoticeboardFragment" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.growlineapp.ui.view.main.fragment.NoticeboardFragment"
-        android:background="#4CAF50"
-        android:orientation="vertical">
+        android:background="@color/white">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="게시판" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="40dp"
+            android:background="@color/white">
+            <Button
+                android:id="@+id/post_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="+"
+                android:textSize="35sp"
+                android:background="@drawable/post_btn"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/post_btn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="+"
-            />
 
-    </LinearLayout>
+
+    </RelativeLayout>
 </layout>

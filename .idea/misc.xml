@@ -3,13 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/drawable/post_btn.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/activity_sign_up.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_home.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_main.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_noticeboard.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_noticeboard.xml" value="0.2837370242214533" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_profile.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_rank.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GrowlineApp/app/src/main/res/layout/fragment_shop.xml" value="0.25364583333333335" />
