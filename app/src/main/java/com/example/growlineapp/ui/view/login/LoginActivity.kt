@@ -28,7 +28,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
     }
 
-    fun check_et() {
+    private fun check_et() {
         if (mBinding.loginIdEt.text.isEmpty() || mBinding.loginPasswordEt.text.isEmpty()) {
             longShowToast("아이디와 비밀번호를 모두 입력해주세요.")
         }

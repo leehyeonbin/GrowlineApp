@@ -25,7 +25,7 @@ abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes val layoutId : Int) 
         return binding.root
     }
 
-    abstract fun init()
+     abstract fun init()
 
     protected fun shortShowText (msg : String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()

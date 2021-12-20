@@ -8,6 +8,7 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
 
 
     override fun init() {
+
     }
 
 }
