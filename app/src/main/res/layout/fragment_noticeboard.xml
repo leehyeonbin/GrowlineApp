@@ -5,13 +5,13 @@
     <data>
         <variable
             name="main"
-            type="com.example.growlineapp.ui.view.main.fragment.NoticeboardFragment" />
+            type="com.example.growlineapp.ui.view.main.fragment.noticeboard.NoticeboardFragment" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.growlineapp.ui.view.main.fragment.NoticeboardFragment"
+        tools:context="com.example.growlineapp.ui.view.main.fragment.noticeboard.NoticeboardFragment"
         android:background="@color/white">
 
         <LinearLayout
