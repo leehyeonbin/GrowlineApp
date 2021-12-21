@@ -3,14 +3,17 @@ package com.example.growlineapp.ui.view.main.fragment.noticeboard
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseFragment
 import com.example.growlineapp.databinding.FragmentNoticeboardBinding
 import com.example.growlineapp.ui.view.main.MainActivity
+import com.example.growlineapp.viewmodel.MainViewModel
 
 class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fragment_noticeboard){
 
-    var mainActivity: MainActivity? = null
+    private var mainActivity: MainActivity? = null
+    private val mainViewModel by viewModels<MainViewModel>()
 
 
     override fun init() {
@@ -26,7 +29,7 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
         super.onViewCreated(view, savedInstanceState)
 
         binding.postBtn.setOnClickListener {
-
+            mainViewModel.setActionView(false)
         }
     }
 

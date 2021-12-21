@@ -1,5 +1,6 @@
 package com.example.growlineapp.ui.view.main
 
+import android.view.View
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -16,8 +17,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val postFragment = PostFragment()
 
+
     override fun init() {
         initBottomNavBar()
+        observeViewModel()
     }
 
 
@@ -44,4 +47,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
         transition.commit()
     }*/
+
+
+    private fun observeViewModel() {
+        mainViewModel.eventActionView.observe(this,
+            {
+                when(it) {
+                    true -> {
+                        mBinding.bottomNavView.visibility = View.VISIBLE
+                    }
+                    false -> {
+                        mBinding.bottomNavView.visibility = View.GONE
+                    }
+                }
+            })
+    }
 }
