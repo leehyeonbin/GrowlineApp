@@ -6,11 +6,14 @@ import androidx.navigation.ui.NavigationUI
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityMainBinding
+import com.example.growlineapp.ui.view.main.fragment.noticeboard.PostFragment
 import com.example.growlineapp.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val mainViewModel by viewModels<MainViewModel>()
+
+    private val postFragment = PostFragment()
 
     override fun init() {
         initBottomNavBar()
@@ -22,5 +25,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         val navController = navHostFragment.navController
 
         NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
+    }
+
+    fun onFragment(int: Int) {
+        val transition = supportFragmentManager.beginTransaction()
+        when(int){
+            1->transition.replace(R.id.fragment_view, postFragment)
+        }
+        transition.commit()
     }
 }
