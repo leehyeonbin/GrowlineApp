@@ -26,7 +26,7 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
         super.onViewCreated(view, savedInstanceState)
 
         binding.postBtn.setOnClickListener {
-            mainActivity!!.onFragment(1)
+
         }
     }
 

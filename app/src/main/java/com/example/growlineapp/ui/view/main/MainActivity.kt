@@ -1,13 +1,14 @@
 package com.example.growlineapp.ui.view.main
 
 import androidx.activity.viewModels
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityMainBinding
 import com.example.growlineapp.ui.view.main.fragment.noticeboard.PostFragment
 import com.example.growlineapp.viewmodel.MainViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -20,18 +21,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
 
-    private fun initBottomNavBar() {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_view) as NavHostFragment
-        val navController = navHostFragment.navController
+//    private fun initBottomNavBar() {
+//        //val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_view) as NavHostFragment
+//        val navController = navHostFragment.navController
+//
+//        NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
+//    }
 
-        NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
+    private fun initBottomNavBar() {
+        val navController =
+            supportFragmentManager.findFragmentById(R.id.fragment_view)?.findNavController()
+        val nav = mBinding.bottomNavView as BottomNavigationView
+        navController?.let {
+            nav.setupWithNavController(navController)
+        }
     }
 
-    fun onFragment(int: Int) {
+/*    fun onFragment(int: Int) {
         val transition = supportFragmentManager.beginTransaction()
         when(int){
             1->transition.replace(R.id.fragment_view, postFragment)
         }
         transition.commit()
-    }
+    }*/
 }

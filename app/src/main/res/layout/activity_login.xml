@@ -8,43 +8,44 @@
             type="com.example.growlineapp.ui.view.login.LoginActivity" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.view.login.LoginActivity"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:gravity="center"
+            android:layout_centerInParent="true">
 
             <EditText
                 android:id="@+id/login_id_et"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="20dp"
-                android:inputType="text"
-                android:hint="아이디를 입력하세요"/>
+                android:hint="아이디를 입력하세요"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/login_password_et"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="20dp"
-                android:inputType="textPassword"
                 android:hint="비밀 번호를 입력하세요"
-                />
+                android:inputType="textPassword" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="회원가입을 안했다면?"/>
+                    android:text="회원가입을 안했다면?" />
 
                 <TextView
                     android:id="@+id/signup_tv"
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="회원가입하기"
-                    android:textColor="#0C5475"/>
+                    android:textColor="#0C5475" />
             </LinearLayout>
 
 
@@ -63,9 +64,9 @@
                 android:layout_marginTop="80dp"
                 android:background="@color/login_color"
                 android:text="로그인"
-                android:textColor="#424242" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
