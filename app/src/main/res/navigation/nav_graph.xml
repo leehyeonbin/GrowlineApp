@@ -10,7 +10,9 @@
         android:name="com.example.growlineapp.ui.view.main.fragment.noticeboard.NoticeboardFragment"
         android:label="fragment_rank"
         tools:layout="@layout/fragment_noticeboard" >
-
+        <action
+            android:id="@+id/action_noticeboardFragment_to_postFragment"
+            app:destination="@id/postFragment" />
     </fragment>
     <fragment
         android:id="@+id/rankFragment"
@@ -30,4 +32,13 @@
         android:name="com.example.growlineapp.ui.view.main.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.growlineapp.ui.view.main.fragment.noticeboard.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_noticeboardFragment"
+            app:destination="@id/noticeboardFragment" />
+    </fragment>
 </navigation>

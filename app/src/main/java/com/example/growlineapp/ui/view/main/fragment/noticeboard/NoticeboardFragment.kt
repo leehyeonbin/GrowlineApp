@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseFragment
 import com.example.growlineapp.databinding.FragmentNoticeboardBinding
@@ -30,6 +31,8 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
 
         binding.postBtn.setOnClickListener {
             mainViewModel.setActionView(false)
+            this.findNavController().navigate(R.id.action_noticeboardFragment_to_postFragment)
+
         }
     }
 
