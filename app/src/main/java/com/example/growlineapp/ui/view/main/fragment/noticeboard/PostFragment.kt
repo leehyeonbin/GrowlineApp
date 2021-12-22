@@ -2,6 +2,7 @@ package com.example.growlineapp.ui.view.main.fragment.noticeboard
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,6 +16,7 @@ class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.fragment_post) {
 
     private val mainViewModel by viewModels<MainViewModel>()
     private var mainActivity : MainActivity? = null
+    private val TAG = "PostFragment - TAG"
 
     override fun init() {
 
@@ -41,10 +43,13 @@ class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.fragment_post) {
 
     private fun onPostingBtn() {
         mainViewModel.setActionView(true)
+        this.findNavController().navigate(R.id.action_postFragment_to_noticeboardFragment)
+        Log.d(TAG, "Onclick_post")
 
     }
 
     private fun onBackBtn() {
         mainViewModel.setActionView(true)
+        this.findNavController().navigate(R.id.action_postFragment_to_noticeboardFragment)
     }
 }

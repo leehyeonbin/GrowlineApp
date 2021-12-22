@@ -53,12 +53,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         mainViewModel.eventActionView.observe(this,
             {
                 when(it) {
-                    true -> {
-                        mBinding.bottomNavView.visibility = View.VISIBLE
-                    }
-                    false -> {
-                        mBinding.bottomNavView.visibility = View.GONE
-                    }
+                    true -> mBinding.bottomNavView.visibility = View.VISIBLE
+                    false -> mBinding.bottomNavView.visibility = View.GONE
                 }
             })
     }
