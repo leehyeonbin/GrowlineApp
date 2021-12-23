@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.growlineapp.ui.view.main.fragment.ProfileFragment"
+        android:name="com.example.growlineapp.ui.view.main.fragment.mypage.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment

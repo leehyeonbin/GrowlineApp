@@ -10,4 +10,5 @@
 
     <color name="main_color">#365116</color>
     <color name="login_color">#7DBF73</color>
+    <color name="background_color">#B4DFAE</color>
 </resources>
