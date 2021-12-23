@@ -31,7 +31,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.growlineapp.ui.view.main.fragment.mypage.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_myPostFragment"
+            app:destination="@id/myPostFragment" />
+    </fragment>
     <fragment
         android:id="@+id/postFragment"
         android:name="com.example.growlineapp.ui.view.main.fragment.noticeboard.PostFragment"
@@ -41,4 +45,9 @@
             android:id="@+id/action_postFragment_to_noticeboardFragment"
             app:destination="@id/noticeboardFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/myPostFragment"
+        android:name="com.example.growlineapp.ui.view.main.fragment.mypage.MyPostFragment"
+        android:label="fragment_my_post"
+        tools:layout="@layout/fragment_my_post" />
 </navigation>

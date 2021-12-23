@@ -3,7 +3,7 @@ package com.example.growlineapp
 import android.content.Intent
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivitySplashBinding
-import com.example.growlineapp.ui.view.main.MainActivity
+import com.example.growlineapp.ui.view.login.LoginActivity
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_splash) {
 
@@ -18,7 +18,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
             longShowToast("점검중 입니다.")
         }
         else {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }
