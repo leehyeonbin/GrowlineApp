@@ -15,10 +15,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val mainViewModel by viewModels<MainViewModel>()
     private val TAG = "MainActivity - TAG"
+    lateinit var user_id : String
 
 
 
     override fun init() {
+        getIntentExtra()
         observeViewModel()
         initBottomNavBar()
     }
@@ -30,6 +32,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 //
 //        NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
 //    }
+
+    private fun getIntentExtra() {
+        user_id = getIntent().getStringExtra("user_id").toString()
+    }
 
     private fun initBottomNavBar() {
         val navController =
