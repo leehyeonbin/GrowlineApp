@@ -20,7 +20,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun init() {
         observeViewModel()
-
         initBottomNavBar()
     }
 
@@ -40,6 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             nav.setupWithNavController(navController)
         }
     }
+
 
 /*    fun onFragment(int: Int) {
         val transition = supportFragmentManager.beginTransaction()

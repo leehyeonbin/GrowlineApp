@@ -2,9 +2,7 @@ package com.example.growlineapp.ui.view.main.fragment.mypage
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.growlineapp.R
@@ -20,7 +18,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
 
 
     override fun init() {
-        loadUserInfo()
+
     }
 
     override fun onAttach(context: Context) {
@@ -28,9 +26,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
         mainActivity = context as MainActivity
     }
 
-    private fun loadUserInfo() {
-        mainVieweModel.getUserInfo()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +38,5 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
     private fun clickMyPost() {
         this.findNavController().navigate(R.id.action_profileFragment_to_myPostFragment)
     }
-
-
 
 }

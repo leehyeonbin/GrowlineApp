@@ -7,6 +7,7 @@ import com.example.growlineapp.databinding.FragmentMyPostBinding
 
 class MyPostFragment : BaseFragment<FragmentMyPostBinding>(R.layout.fragment_my_post) {
     override fun init() {
+
     }
 
 }

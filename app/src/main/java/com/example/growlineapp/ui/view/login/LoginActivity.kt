@@ -1,13 +1,18 @@
 package com.example.growlineapp.ui.view.login
 
 import android.content.Intent
+import android.text.Editable
+import androidx.activity.viewModels
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityLoginBinding
 import com.example.growlineapp.ui.view.login.signup.SignUpActivity
 import com.example.growlineapp.ui.view.main.MainActivity
+import com.example.growlineapp.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
+
+    private val loginViewModel by viewModels<LoginViewModel>()
 
     override fun init() {
         click_signUp()
@@ -33,8 +38,23 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             longShowToast("아이디와 비밀번호를 모두 입력해주세요.")
         }
         else {
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            finish()
+            login_checking(mBinding.loginPasswordEt.text.toString(), mBinding.loginPasswordEt.text.toString())
         }
     }
+
+    private fun login_checking(id: String, password: String) {
+        loginViewModel.loginCheck(id, password)
+        if (loginViewModel.result.value == true) {
+            longShowToast("환영합니다.")
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            intent.putExtra("user_id", id)
+            startActivity(intent)
+        }
+
+        else {
+            shortShowToast("아이디 또는 비밀번호를 확인해주세요.")
+        }
+    }
+
+
 }
