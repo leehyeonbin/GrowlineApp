@@ -1,12 +1,17 @@
 package com.example.growlineapp.ui.view.login.signup
 
 import android.content.Intent
+import androidx.activity.viewModels
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivitySignUpBinding
 import com.example.growlineapp.ui.view.login.LoginActivity
+import com.example.growlineapp.viewmodel.SignupViewModel
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
+
+    private val signUpViewModel by viewModels<SignupViewModel>()
+
     override fun init() {
         click_btn()
     }
@@ -28,8 +33,14 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     private fun check_password() {
         if(mBinding.signupPasswordEt.text.toString() == mBinding.signupCheckEt.text.toString()) {
-            startActivity(Intent(this,LoginActivity::class.java))
-            finish()
+            if (signUpViewModel.result.value == true) {
+                shortShowToast("회원가입 되었습니다.")
+                startActivity(Intent(this,LoginActivity::class.java))
+                finish()
+            }
+            else {
+                shortShowToast("아이디가 중복됩니다.")
+            }
         }
         else {
             longShowToast("비밀번호가 다릅니다.")
