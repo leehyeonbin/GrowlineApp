@@ -13,12 +13,13 @@ import com.example.growlineapp.viewmodel.MainViewModel
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
 
-    private val mainVieweModel by activityViewModels<MainViewModel>()
+    private val mainViewModel by activityViewModels<MainViewModel>()
     private var mainActivity : MainActivity? = null
 
 
     override fun init() {
-
+        getUserInfo()
+        observeUserInfo()
     }
 
     override fun onAttach(context: Context) {
@@ -37,6 +38,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
 
     private fun clickMyPost() {
         this.findNavController().navigate(R.id.action_profileFragment_to_myPostFragment)
+    }
+
+    private fun observeUserInfo() {
+        mainViewModel.koin.observe(this,{
+            binding.progressbar.visibility = View.GONE
+        })
+    }
+
+    private fun getUserInfo() {
+        mainViewModel.getUserInfo(mainViewModel.userId.toString())
     }
 
 }

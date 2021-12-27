@@ -14,10 +14,10 @@ import retrofit2.Response
 
 class MainViewModel : ViewModel() {
     //다른화면으로 넘어갈때 bottom nav bar 숨기기 or 보이기 (true = 보이기, false = 숨기기)
-
-
     private val _eventActionView = MutableLiveData(true)
     val eventActionView: LiveData<Boolean> get() = _eventActionView
+
+
     private val TAG = "MainViewModel - TAG"
 
 
@@ -47,7 +47,7 @@ class MainViewModel : ViewModel() {
     }
 
 
-    fun getUserInfo(input_id:String, input_password : String) {
+    fun getUserInfo(input_id:String) {
         val queries: HashMap<String, String> = HashMap()
 
         queries["user_id"] = input_id
