@@ -33,11 +33,18 @@ class MainViewModel : ViewModel() {
     val koin : LiveData<Int>
         get() = _koin
 
+    private var _userId = MutableLiveData<String>()
+    val userId : LiveData<String>
+        get() = _userId
+
     fun setActionView(content: Boolean) {
         _eventActionView.value = content
     }
 
 
+    fun setUserId(user_id : String) {
+        _userId.value = user_id
+    }
 
 
     fun getUserInfo(input_id:String, input_password : String) {

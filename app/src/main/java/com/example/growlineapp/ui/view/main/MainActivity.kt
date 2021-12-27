@@ -1,6 +1,5 @@
 package com.example.growlineapp.ui.view.main
 
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
@@ -9,7 +8,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivityMainBinding
-import com.example.growlineapp.ui.view.main.fragment.ShopFragment
 import com.example.growlineapp.viewmodel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -17,14 +15,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val mainViewModel by viewModels<MainViewModel>()
     private val TAG = "MainActivity - TAG"
-    lateinit var user_id : String
+    private lateinit var user_id : String
 
 
 
     override fun init() {
         getIntentExtra()
         observeViewModel()
-        bundle()
+        setUserId(user_id)
         initBottomNavBar()
     }
 
@@ -36,13 +34,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 //        NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
 //    }
 
-    private fun bundle() {
-        val bundle : Bundle
-        bundle.putString("user_id",user_id)
-    }
-
     private fun getIntentExtra() {
         user_id = getIntent().getStringExtra("user_id").toString()
+    }
+
+    private fun setUserId(user_id : String) {
+        mainViewModel.setUserId(user_id)
     }
 
     private fun initBottomNavBar() {
