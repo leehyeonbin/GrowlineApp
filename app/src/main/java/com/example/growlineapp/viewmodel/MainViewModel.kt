@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.growlineapp.data.model.Post
 import com.example.growlineapp.data.model.UserProfile
 import com.example.growlineapp.data.retrofit.RetrofitBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -67,6 +68,23 @@ class MainViewModel : ViewModel() {
 
                 override fun onFailure(call: Call<UserProfile>, t: Throwable) {
                     Log.e(TAG,t.toString())
+                }
+
+            })
+        }
+    }
+
+    fun getPostList() {
+        CoroutineScope(Dispatchers.IO).launch {
+            RetrofitBuilder.api.getPostlist().enqueue(object : retrofit2.Callback<Post> {
+                override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                    if(response.isSuccessful) {
+
+                    }
+                }
+
+                override fun onFailure(call: Call<Post>, t: Throwable) {
+                    Log.e(TAG, t.toString())
                 }
 
             })
