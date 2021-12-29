@@ -51,6 +51,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             startActivity(intent)
         }
 
+
         else {
             shortShowToast("아이디 또는 비밀번호를 확인해주세요.")
         }

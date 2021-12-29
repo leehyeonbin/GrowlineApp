@@ -21,7 +21,7 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
 
 
     override fun init() {
-
+        mainViewModel.getPostList()
     }
 
     override fun onAttach(context: Context) {
@@ -32,11 +32,12 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         binding.postBtn.setOnClickListener {
             Log.d(TAG , "onClickPostBtn")
             mainViewModel.setActionView(false)
             this.findNavController().navigate(R.id.action_noticeboardFragment_to_postFragment)
-
         }
     }
 

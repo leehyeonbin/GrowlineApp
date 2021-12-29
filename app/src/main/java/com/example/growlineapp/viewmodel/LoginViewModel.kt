@@ -1,5 +1,6 @@
 package com.example.growlineapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,6 +13,8 @@ import retrofit2.Call
 import retrofit2.Response
 
 class LoginViewModel() : ViewModel(){
+
+    private val TAG = "LoginViewModel - TAG"
 
     private var _result = MutableLiveData<Boolean>()
     val result : LiveData<Boolean>
@@ -33,6 +36,7 @@ class LoginViewModel() : ViewModel(){
                 }
 
                 override fun onFailure(call: Call<LoginResult>, t: Throwable) {
+                    Log.e(TAG, t.toString())
                 }
 
             })

@@ -2,6 +2,7 @@ package com.example.growlineapp.data.api
 
 import com.example.growlineapp.data.model.LoginResult
 import com.example.growlineapp.data.model.Post
+import com.example.growlineapp.data.model.Post_list
 import com.example.growlineapp.data.model.UserProfile
 import okhttp3.Response
 import retrofit2.http.*
@@ -26,5 +27,6 @@ interface UserApi {
     @GET("post")
     suspend fun getPostlist(
 
-    ):retrofit2.Call<Post>
+    ):retrofit2.Call<Post_list>
+
 }

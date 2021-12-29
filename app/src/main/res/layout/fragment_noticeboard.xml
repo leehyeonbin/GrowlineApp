@@ -18,7 +18,7 @@
             android:id="@+id/content_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/noticeboard_item_list"/>
+            tools:listitem="@layout/noticeboard_item_list" />
 
         <LinearLayout
             android:layout_width="wrap_content"

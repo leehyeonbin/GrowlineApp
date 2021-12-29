@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.growlineapp.R
 import com.example.growlineapp.data.model.Post
+import com.example.growlineapp.data.model.Post_list
 
-class PostRecyclerViewAdapter(private val list : Array<Post>): RecyclerView.Adapter<PostRecyclerViewAdapter.PostViewHolder>() {
+class PostRecyclerViewAdapter(private val list : ArrayList<Post>): RecyclerView.Adapter<PostRecyclerViewAdapter.PostViewHolder>() {
     inner class PostViewHolder(val v : View) : RecyclerView.ViewHolder(v) {
         val title = v.findViewById<TextView>(R.id.title_tv)
         val content = v.findViewById<TextView>(R.id.content_tv)

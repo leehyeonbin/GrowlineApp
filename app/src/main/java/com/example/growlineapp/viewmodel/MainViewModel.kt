@@ -4,9 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.growlineapp.data.model.Post
+import com.example.growlineapp.data.model.Post_list
 import com.example.growlineapp.data.model.UserProfile
 import com.example.growlineapp.data.retrofit.RetrofitBuilder
+import com.example.growlineapp.ui.adapter.PostRecyclerViewAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -76,15 +77,16 @@ class MainViewModel : ViewModel() {
 
     fun getPostList() {
         CoroutineScope(Dispatchers.IO).launch {
-            RetrofitBuilder.api.getPostlist().enqueue(object : retrofit2.Callback<Post> {
-                override fun onResponse(call: Call<Post>, response: Response<Post>) {
+            RetrofitBuilder.api.getPostlist().enqueue(object : retrofit2.Callback<Post_list> {
+                override fun onResponse(call: Call<Post_list>, response: Response<Post_list>) {
                     if(response.isSuccessful) {
-
+                        val post_list = response.body()
+                        PostRecyclerViewAdapter(post_list!!.post)
                     }
                 }
 
-                override fun onFailure(call: Call<Post>, t: Throwable) {
-                    Log.e(TAG, t.toString())
+                override fun onFailure(call: Call<Post_list>, t: Throwable) {
+                    Log.d(TAG, "게시글 불러오기 실패 : " + t.message.toString())
                 }
 
             })
