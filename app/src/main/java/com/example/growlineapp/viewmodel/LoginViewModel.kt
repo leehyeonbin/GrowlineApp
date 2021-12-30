@@ -1,5 +1,6 @@
 package com.example.growlineapp.viewmodel
 
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
 
+@Suppress("UnusedEquals")
 class LoginViewModel() : ViewModel(){
 
     private val TAG = "LoginViewModel - TAG"

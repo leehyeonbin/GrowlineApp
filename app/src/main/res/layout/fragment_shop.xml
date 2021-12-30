@@ -54,16 +54,34 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="사용 방법"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="외출을 "/>
+
+                </LinearLayout>
                 <Button
                     android:id="@+id/submit_btn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_gravity="bottom"
                     android:text="구매"
                     android:textColor="@color/white"
-                    android:background="@color/background_color"
-                    android:layout_marginBottom="50dp"/>
+                    android:background="@color/background_color" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

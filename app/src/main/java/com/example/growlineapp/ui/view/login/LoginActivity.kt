@@ -1,6 +1,8 @@
 package com.example.growlineapp.ui.view.login
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.text.Editable
 import androidx.activity.viewModels
 import com.example.growlineapp.R
@@ -49,8 +51,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             intent.putExtra("user_id", id)
             startActivity(intent)
+            val sharedPreferences = getSharedPreferences("user_information",Context.MODE_PRIVATE)
+            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putString("user_id",id)
+            editor.putString("user_password",password)
+            editor.commit()
         }
-
 
         else {
             shortShowToast("아이디 또는 비밀번호를 확인해주세요.")

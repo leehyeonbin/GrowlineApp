@@ -43,6 +43,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
     private fun observeUserInfo() {
         mainViewModel.koin.observe(this,{
             binding.progressbar.visibility = View.GONE
+            binding.userIdTv.text = mainViewModel.userId.toString()
+            binding.userDescriptionTv.text = mainViewModel.summary.toString()
         })
     }
 

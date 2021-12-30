@@ -1,9 +1,6 @@
 package com.example.growlineapp.data.api
 
-import com.example.growlineapp.data.model.LoginResult
-import com.example.growlineapp.data.model.Post
-import com.example.growlineapp.data.model.Post_list
-import com.example.growlineapp.data.model.UserProfile
+import com.example.growlineapp.data.model.*
 import okhttp3.Response
 import retrofit2.http.*
 
@@ -19,14 +16,19 @@ interface UserApi {
     ):retrofit2.Call<LoginResult>
 
     @FormUrlEncoded
-    @POST("signup")
+    @POST("sign_up")
     suspend fun signUp(
         @QueryMap queryMap: Map<String, String>
     ):retrofit2.Call<LoginResult>
 
-    @GET("post")
-    suspend fun getPostlist(
+    @GET("comunity")
+    suspend fun getPostList(
 
     ):retrofit2.Call<Post_list>
+
+    @GET("shop")
+    suspend fun getStore(
+        @QueryMap queryMap: Map<String, String>
+    ):retrofit2.Call<ShopResult>
 
 }

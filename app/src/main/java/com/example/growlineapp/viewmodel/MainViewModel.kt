@@ -77,7 +77,7 @@ class MainViewModel : ViewModel() {
 
     fun getPostList() {
         CoroutineScope(Dispatchers.IO).launch {
-            RetrofitBuilder.api.getPostlist().enqueue(object : retrofit2.Callback<Post_list> {
+            RetrofitBuilder.api.getPostList().enqueue(object : retrofit2.Callback<Post_list> {
                 override fun onResponse(call: Call<Post_list>, response: Response<Post_list>) {
                     if(response.isSuccessful) {
                         val post_list = response.body()
