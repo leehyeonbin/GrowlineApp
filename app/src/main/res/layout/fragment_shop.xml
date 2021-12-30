@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="외출권"
+                android:text="상점"
                 android:textSize="50sp" />
         </LinearLayout>
         <LinearLayout
@@ -54,34 +54,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:orientation="vertical">
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="사용 방법"
-                        android:gravity="center"
-                        android:layout_marginTop="30dp"
-                        android:textSize="24sp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="외출을 "/>
-
-                </LinearLayout>
-                <Button
-                    android:id="@+id/submit_btn"
+                    android:layout_height="90dp"
+                    android:text="외출증"
+                    android:layout_marginBottom="40dp"
+                    android:background="#E91E63"/>
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="구매"
-                    android:textColor="@color/white"
-                    android:background="@color/background_color" />
+                    android:layout_height="90dp"
+                    android:text="청소 면제권"
+                    android:layout_marginBottom="40dp"
+                    android:background="#FFEB3B"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:text="자리 우선권"
+                    android:background="#00BCD4"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
