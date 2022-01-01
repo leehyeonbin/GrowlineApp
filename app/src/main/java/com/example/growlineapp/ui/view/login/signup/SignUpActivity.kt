@@ -1,6 +1,7 @@
 package com.example.growlineapp.ui.view.login.signup
 
 import android.content.Intent
+import android.util.Log
 import androidx.activity.viewModels
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
@@ -11,6 +12,7 @@ import com.example.growlineapp.viewmodel.SignupViewModel
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
 
     private val signUpViewModel by viewModels<SignupViewModel>()
+    private val TAG ="SignUpActivity - TAG"
 
     override fun init() {
         click_btn()
@@ -33,6 +35,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     private fun check_password() {
         if(mBinding.signupPasswordEt.text.toString() == mBinding.signupCheckEt.text.toString()) {
+            Log.d(TAG, signUpViewModel.result.value.toString())
             if (signUpViewModel.result.value == true) {
                 shortShowToast("회원가입 되었습니다.")
                 startActivity(Intent(this,LoginActivity::class.java))
