@@ -5,18 +5,26 @@
             name="signUp"
             type="com.example.growlineapp.ui.view.login.signup.SignUpActivity" />
     </data>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.login.signup.SignUpActivity"
-    android:gravity="center">
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        android:layout_margin="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:layout_centerInParent="true">
 
         <EditText
             android:id="@+id/signup_id_et"
@@ -56,5 +64,5 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
 </layout>
