@@ -55,7 +55,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             val editor : SharedPreferences.Editor = sharedPreferences.edit()
             editor.putString("user_id",id)
             editor.putString("user_password",password)
-            editor.commit()
+            editor.apply()
+            finish()
         }
 
         else {

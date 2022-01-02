@@ -16,6 +16,14 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     override fun init() {
         click_btn()
+        clickBackBtn()
+    }
+
+    private fun clickBackBtn() {
+        mBinding.backBtn.setOnClickListener {
+            startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
+            finish()
+        }
     }
 
     private fun click_btn() {
