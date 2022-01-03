@@ -37,19 +37,20 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
     }
 
     private fun clickMyPost() {
-        this.findNavController().navigate(R.id.action_profileFragment_to_myPostFragment)
+        shortShowText("준비중 입니다.")
+//        this.findNavController().navigate(R.id.action_profileFragment_to_myPostFragment)
     }
 
     private fun observeUserInfo() {
         mainViewModel.koin.observe(this,{
             binding.progressbar.visibility = View.GONE
-            binding.userIdTv.text = mainViewModel.userId.toString()
+            binding.userIdTv.text = mainViewModel.userName.toString()
             binding.userDescriptionTv.text = mainViewModel.summary.toString()
         })
     }
 
     private fun getUserInfo() {
-        mainViewModel.getUserInfo(mainViewModel.userId.toString())
+        mainViewModel.getUserInfo(mainViewModel.id.toString())
     }
 
 }

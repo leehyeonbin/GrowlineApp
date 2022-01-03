@@ -57,6 +57,7 @@
                 android:layout_weight="2.5"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/going_out_tv"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:text="외출증"
@@ -65,6 +66,7 @@
                     android:layout_marginTop="40dp"
                     android:gravity="center"/>
                 <TextView
+                    android:id="@+id/cleaning_pass_tv"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:text="청소 면제권"
@@ -73,6 +75,7 @@
                     android:gravity="center"
                     />
                 <TextView
+                    android:id="@+id/first_sit_tv"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:text="자리 우선권"

@@ -1,9 +1,8 @@
 package com.example.growlineapp.ui.view.login
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.text.Editable
+import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import com.example.growlineapp.R
 import com.example.growlineapp.base.BaseActivity
@@ -15,6 +14,7 @@ import com.example.growlineapp.viewmodel.LoginViewModel
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
     private val loginViewModel by viewModels<LoginViewModel>()
+    private val TAG = "LoginActivity TAG"
 
     override fun init() {
         click_signUp()
@@ -32,6 +32,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     private fun click_Button() {
         mBinding.submitBtn.setOnClickListener {
             check_et()
+            Log.d(TAG,mBinding.loginIdEt.text.toString() + " " + mBinding.loginPasswordEt.text.toString())
         }
     }
 
@@ -40,28 +41,28 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             longShowToast("아이디와 비밀번호를 모두 입력해주세요.")
         }
         else {
-            login_checking(mBinding.loginPasswordEt.text.toString(), mBinding.loginPasswordEt.text.toString())
+            login_checking(mBinding.loginIdEt.text.trim().toString(), mBinding.loginPasswordEt.text.trim().toString())
         }
     }
 
     private fun login_checking(id: String, password: String) {
+        mBinding.progressbar.visibility = View.VISIBLE
         loginViewModel.loginCheck(id, password)
-        if (loginViewModel.result.value == true) {
-            longShowToast("환영합니다.")
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            intent.putExtra("user_id", id)
-            startActivity(intent)
-            val sharedPreferences = getSharedPreferences("user_information",Context.MODE_PRIVATE)
-            val editor : SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString("user_id",id)
-            editor.putString("user_password",password)
-            editor.apply()
-            finish()
-        }
+        loginViewModel.result.observe(this,{
+            if (loginViewModel.result.value == "true") {
+                mBinding.progressbar.visibility = View.GONE
+                longShowToast("환영합니다.")
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                intent.putExtra("user_id", id)
+                startActivity(intent)
+                finish()
+            }
 
-        else {
-            shortShowToast("아이디 또는 비밀번호를 확인해주세요.")
-        }
+            else if (loginViewModel.result.value == "false"){
+                shortShowToast("아이디 또는 비밀번호를 확인해주세요.")
+                mBinding.progressbar.visibility = View.GONE
+            }
+        })
     }
 
 

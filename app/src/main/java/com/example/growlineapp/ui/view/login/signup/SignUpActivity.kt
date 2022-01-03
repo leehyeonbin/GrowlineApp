@@ -8,6 +8,7 @@ import com.example.growlineapp.base.BaseActivity
 import com.example.growlineapp.databinding.ActivitySignUpBinding
 import com.example.growlineapp.ui.view.login.LoginActivity
 import com.example.growlineapp.viewmodel.SignupViewModel
+import kotlinx.coroutines.delay
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
 
@@ -43,15 +44,18 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     private fun check_password() {
         if(mBinding.signupPasswordEt.text.toString() == mBinding.signupCheckEt.text.toString()) {
+            signUpViewModel.signup(mBinding.signupIdEt.text.toString(), mBinding.signupPasswordEt.text.toString())
             Log.d(TAG, signUpViewModel.result.value.toString())
-            if (signUpViewModel.result.value == true) {
-                shortShowToast("회원가입 되었습니다.")
-                startActivity(Intent(this,LoginActivity::class.java))
-                finish()
-            }
-            else {
-                shortShowToast("아이디가 중복됩니다.")
-            }
+            signUpViewModel.result.observe(this, {
+                if (signUpViewModel.result.value == "true") {
+                    shortShowToast("회원가입 되었습니다.")
+                    startActivity(Intent(this,LoginActivity::class.java))
+                    finish()
+                }
+                else {
+                    shortShowToast("아이디가 중복됩니다.")
+                }
+            })
         }
         else {
             longShowToast("비밀번호가 다릅니다.")

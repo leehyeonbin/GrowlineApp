@@ -10,4 +10,8 @@ class ShopFragment : BaseFragment<FragmentShopBinding>(R.layout.fragment_shop){
     override fun init() {
     }
 
+    private fun onClickListener() {
+
+    }
+
 }
