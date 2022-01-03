@@ -29,6 +29,6 @@ interface UserApi {
     @GET("shop")
     suspend fun getStore(
         @QueryMap query: Map<String, String>
-    ): Response<List<ShopResult>>
+    ): Response<ShopResult>
 
 }
