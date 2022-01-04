@@ -21,7 +21,6 @@ class NoticeboardFragment : BaseFragment<FragmentNoticeboardBinding>(R.layout.fr
 
 
     override fun init() {
-        mainViewModel.getPostList()
     }
 
     override fun onAttach(context: Context) {

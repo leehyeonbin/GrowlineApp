@@ -3,12 +3,14 @@ package com.example.growlineapp.data.model
 import com.google.gson.annotations.SerializedName
 
 data class UserProfile(
-    @SerializedName("user_id")
-    val user_id : String,
-    @SerializedName("user_summary")
-    val user_summary : String,
-    @SerializedName("user_koin")
-    val user_koin : Int,
-    @SerializedName("result")
-    val login_result : Boolean
+    @SerializedName("choose_sit")
+    val choose_sit : Int,
+    @SerializedName("coin")
+    val coin : Int,
+    @SerializedName("name")
+    val name : String,
+    @SerializedName("no_clean")
+    val no_clean : Int,
+    @SerializedName("outside")
+    val outside : Int
 )

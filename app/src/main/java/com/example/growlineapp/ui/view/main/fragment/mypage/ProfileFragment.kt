@@ -18,7 +18,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
 
 
     override fun init() {
-        getUserInfo()
         observeUserInfo()
     }
 
@@ -42,15 +41,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
     }
 
     private fun observeUserInfo() {
-        mainViewModel.koin.observe(this,{
+        mainViewModel.userInfo_result.observe(this,{
+            binding.userNameTv.text = mainViewModel.userName.value
+            binding.userNoClean.text = mainViewModel.no_clean.value.toString()
+            binding.userOutside.text = mainViewModel.outside.value.toString()
+            binding.userSit.text = mainViewModel.choose_sit.value.toString()
             binding.progressbar.visibility = View.GONE
-            binding.userIdTv.text = mainViewModel.userName.toString()
-            binding.userDescriptionTv.text = mainViewModel.summary.toString()
         })
-    }
-
-    private fun getUserInfo() {
-        mainViewModel.getUserInfo(mainViewModel.id.toString())
     }
 
 }

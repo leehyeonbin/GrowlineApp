@@ -22,8 +22,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun init() {
         getIntentExtra()
         observeViewModel()
-        setUserId(user_id)
         initBottomNavBar()
+        getUserInfo()
     }
 
 
@@ -34,12 +34,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 //        NavigationUI.setupWithNavController(mBinding.bottomNavView, navController)
 //    }
 
-    private fun getIntentExtra() {
-        user_id = getIntent().getStringExtra("user_id").toString()
+    private fun getUserInfo() {
+        mainViewModel.getUserInfo(user_id)
     }
 
-    private fun setUserId(user_id : String) {
-        mainViewModel.setUserId(user_id)
+    private fun getIntentExtra() {
+        user_id = getIntent().getStringExtra("user_id").toString()
     }
 
     private fun initBottomNavBar() {

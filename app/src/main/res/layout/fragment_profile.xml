@@ -31,16 +31,9 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/userId_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    android:text="..."
-                    android:textSize="50sp" />
 
                 <ImageView
+                    android:layout_marginTop="100dp"
                     android:id="@+id/userProfile_ev"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
@@ -57,14 +50,65 @@
                     android:text="name"
                     android:textSize="40sp" />
 
-                <TextView
-                    android:id="@+id/userDescription_tv"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:layout_gravity="center"
-                    android:text="description"
-                    android:layout_marginTop="50dp"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="외출권 : "
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/user_outside"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="청소 면제권 : "
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/user_no_clean"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="자리 선점권 : "
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/user_sit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"/>
+                </LinearLayout>
 
             </LinearLayout>
 

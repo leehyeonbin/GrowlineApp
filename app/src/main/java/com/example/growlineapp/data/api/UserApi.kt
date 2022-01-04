@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface UserApi {
-    @GET("user_profile")
+    @GET("user_info")
     suspend fun getUserProfile(
         @QueryMap query: Map<String, String>
     ): Response<UserProfile>
@@ -21,10 +21,6 @@ interface UserApi {
         @QueryMap query: Map<String, String>
     ): Response<LoginResult>
 
-    @GET("community")
-    suspend fun getPostList(
-
-    ): Response<Post_list>
 
     @GET("shop")
     suspend fun getStore(
