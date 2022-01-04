@@ -18,7 +18,8 @@ interface UserApi {
     @FormUrlEncoded
     @POST("sign_up")
     suspend fun signUp(
-        @QueryMap query: Map<String, String>
+        @Field("user_id") user_id : String,
+        @Field("password") password : String
     ): Response<LoginResult>
 
 

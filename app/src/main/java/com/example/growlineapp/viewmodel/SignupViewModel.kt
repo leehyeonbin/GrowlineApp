@@ -21,15 +21,11 @@ class SignupViewModel : ViewModel() {
     val result : LiveData<String>
         get() = _result
 
-    fun signup (user_id : String, user_password : String) {
-        val queriys : HashMap<String, String> = HashMap()
-        queriys["user_id"] = user_id
-        queriys["password"] = user_password
 
+    fun signup (user_id : String, password : String) {
 
         viewModelScope.launch {
-            val response = RetrofitBuilder.api.signUp(queriys)
-
+            val response = RetrofitBuilder.api.signUp(user_id = user_id, password = password)
             if(response.isSuccessful) {
                 Log.d(TAG, response.body()!!.result)
                 _result.value = response.body()!!.result
