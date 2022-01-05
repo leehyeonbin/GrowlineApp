@@ -10,13 +10,60 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E91E63"
-        tools:context="com.example.growlineapp.ui.view.main.fragment.HomeFragment">
-
+        tools:context="com.example.growlineapp.ui.view.main.fragment.HomeFragment"
+        android:background="#ECECEC"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:gravity="center">
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="어린 왕자"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#00534B"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도시 농업 커뮤니티"
+            android:textSize="20sp"
+            android:layout_marginBottom="40sp"
+            android:textColor="#00534B"/>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="메인" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="40dp">
+                <Button
+                    android:id="@+id/app_info_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="우리 앱은?"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/login_color"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/how_coin_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="코인은?"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/login_color"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </layout>
